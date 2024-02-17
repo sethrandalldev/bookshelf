@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   get 'books/index'
   get 'books/show'
   get 'articles/index'
@@ -7,4 +8,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  root "pages#home"
+
+  resources :books do
+    collection do
+      get 'list'
+    end 
+  end
 end

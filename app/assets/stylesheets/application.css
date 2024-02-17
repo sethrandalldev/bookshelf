@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+ .sort {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: relative;
+  margin-left: 5px;
+}
+
+.sort-desc {
+  border-top: 8px solid #fff;
+  top: 12px;
+}
+
+.sort-asc {
+  border-bottom: 8px solid #fff;
+  top: -12px;
+}
