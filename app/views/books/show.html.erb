@@ -1,2 +1,2 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1><%= @book.title %></h1>
+<p>Author: <a href="/authors/<%= @book.author_id %>"><%= @book.author.name %></a></p>

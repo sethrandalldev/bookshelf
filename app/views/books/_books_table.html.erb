@@ -18,6 +18,8 @@
           <%= sort_link(column: "pages", label: "# of Pages") %>
           <%= sort_indicator if params[:column] == "pages" %>
         </th>
+        <th id="books-details" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
+        </th>
       </tr>
     </thead>
 
@@ -28,6 +30,11 @@
           <td class="text-left py-3 px-6"><%= book.author.name %></td>
           <td class="text-left py-3 px-6"><%= book.genre %></td>
           <td class="text-left py-3 px-6"><%= book.pages %></td>
+          <td class="text-left py-3 px-6">
+            <a href="/books/<%= book.id %>" data-turbo="false">
+              Details
+            </a>
+          </td>
         </tr>
       <% end %>
     </tbody>
