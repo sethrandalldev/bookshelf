@@ -1,0 +1,27 @@
+<h1>Add Book to Bookshelf</h1>
+
+<%= form_with model: @book do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :author %><br>
+    <%= collection_select(:book, :author_id, Author.all, :id, :name, prompt: true) %>
+  <div>
+
+  <div>
+    <%= form.label :genre %><br>
+    <%= form.text_field :genre %>
+  </div>
+
+  <div>
+    <%= form.label :pages %><br>
+    <%= form.number_field :pages %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
