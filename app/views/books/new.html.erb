@@ -1,27 +1,28 @@
-<h1>Add Book to Bookshelf</h1>
+<div class="max-w-screen-sm mx-auto">
+  <h1 class="text-3xl">New Book</h1>  
+  <%= form_with model: @book do |form| %>
+    <div>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
 
-<%= form_with model: @book do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </div>
+    <div>
+      <%= form.label :author %><br>
+      <%= collection_select(:book, :author_id, Author.all, :id, :name, {:prompt=>true}, {:class =>'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}) %>
+    <div>
 
-  <div>
-    <%= form.label :author %><br>
-    <%= collection_select(:book, :author_id, Author.all, :id, :name, prompt: true) %>
-  <div>
+    <div>
+      <%= form.label :genre %><br>
+      <%= form.text_field :genre, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
 
-  <div>
-    <%= form.label :genre %><br>
-    <%= form.text_field :genre %>
-  </div>
+    <div>
+      <%= form.label :pages %><br>
+      <%= form.number_field :pages, class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' %>
+    </div>
 
-  <div>
-    <%= form.label :pages %><br>
-    <%= form.number_field :pages %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
