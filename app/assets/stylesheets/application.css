@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ body {
+  background-color: #eee;
+ }
+
  .sort {
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
