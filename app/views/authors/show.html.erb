@@ -1,4 +1,10 @@
 <div>
   <h1 class="font-bold text-4xl"><%= @author.name %></h1>
   <p>Author's books on your bookshelf</p>
+
+  <ul>
+    <% @author.books.each do |book| %>
+      <li><a href="/books/<%= book.id %>"><%= book.title %></a></li>
+    <% end %>
+  </ul>
 </div>
