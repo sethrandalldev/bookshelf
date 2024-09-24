@@ -1,2 +1,7 @@
-<h1><%= @book.title %></h1>
-<p>Author: <a href="/authors/<%= @book.author_id %>"><%= @book.author.name %></a></p>
+<div class="text-center">
+  <h1 class="my-5 text-3xl"><%= @book.title %></h1>
+  <p class="my-5"><a href="/authors/<%= @book.author_id %>" class="text-gray-600"><%= @book.author.name %></a></p>
+
+  <h2>Details</h2>
+  <p><%= @book.pages %></p>
+</div>
