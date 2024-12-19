@@ -24,7 +24,7 @@ class BooksController < ApplicationController
 
   def list
     books = Book.includes(:author).order("#{params[:column]} #{params[:direction]}")
-    render(partial: 'books_table', locals: { books: books })
+    render(partial: 'shared/books_table', locals: { books: books })
   end
 
   private
